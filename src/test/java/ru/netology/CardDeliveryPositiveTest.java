@@ -1,4 +1,4 @@
-package ru.netology.card_delivery;
+package ru.netology;
 
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.BeforeEach;

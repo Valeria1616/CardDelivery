@@ -1,4 +1,4 @@
-package ru.netology.card_delivery;
+package ru.netology;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,6 @@ import static com.codeborne.selenide.Selenide.open;
 public class CardDeliveryNegativeTest {
     @BeforeEach
     void setUp() {
-        Configuration.headless = true;
         open("http://localhost:9999");
     }
 
