@@ -26,8 +26,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfCityEmpty() {
         $("[data-test-id='city'] [placeholder='Город']").setValue("");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id='name'] [type=text]").setValue("Ирина Пирогова");
         $("[data-test-id='phone'] [type=tel]").setValue("+79883339918");
         $("[data-test-id=agreement]").click();
@@ -40,8 +41,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfCityInvalid() {
         $("[data-test-id='city'] [placeholder='Город']").setValue("Париж");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id='name'] [type=text]").setValue("Ирина Пирогова");
         $("[data-test-id='phone'] [type=tel]").setValue("+79883339918");
         $("[data-test-id=agreement]").click();
@@ -54,6 +56,7 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfDateIsEmpty() {
         $("[data-test-id='city'] [placeholder='Город']").setValue("Краснодар");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue("");
         $("[data-test-id='name'] [type=text]").setValue("Ирина Пирогова");
@@ -68,8 +71,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfSurnameAndNameIsEmpty() {
         $("[data-test-id='city'] [placeholder='Город']").setValue("Краснодар");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id='name'] [type=text]").setValue("");
         $("[data-test-id='phone'] [type=tel]").setValue("+79883339918");
         $("[data-test-id=agreement]").click();
@@ -82,8 +86,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfInvalidSurnameAndName() {
         $("[data-test-id='city'] [placeholder='Город']").setValue("Краснодар");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id='name'] [type=text]").setValue("Irina Pirogova");
         $("[data-test-id='phone'] [type=tel]").setValue("+79883339918");
         $("[data-test-id=agreement]").click();
@@ -96,8 +101,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfSurnameAndNameConsistsOfNumbers() {
         $("[data-test-id='city'] [placeholder='Город']").setValue("Краснодар");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id='name'] [type=text]").setValue("5555");
         $("[data-test-id='phone'] [type=tel]").setValue("+79883339918");
         $("[data-test-id=agreement]").click();
@@ -110,8 +116,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfSurnameAndNameConsistsOfSpecialCharacters() {
         $("[data-test-id='city'] [placeholder='Город']").setValue("Краснодар");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id='date'] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id='name'] [type=text]").setValue("%#$%$#");
         $("[data-test-id='phone'] [type=tel]").setValue("+79883339918");
         $("[data-test-id=agreement]").click();
@@ -124,8 +131,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnSuccessIfFieldsAreFilledInCorrectly() {
         $("[data-test-id=city] [placeholder='Город']").setValue("Краснодар");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id=name] [type=text]").setValue("Ирина Пирогова");
         $("[data-test-id=phone] [type=tel]").setValue("");
         $("[data-test-id=agreement]").click();
@@ -138,8 +146,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfPhoneWithLetters() {
         $("[data-test-id=city] [placeholder='Город']").setValue("Краснодар");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id=name] [type=text]").setValue("Ирина Пирогова");
         $("[data-test-id=phone] [type=tel]").setValue("АБВ");
         $("[data-test-id=agreement]").click();
@@ -152,8 +161,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfPhoneHasSpecialCharacters() {
         $("[data-test-id=city] [placeholder='Город']").setValue("Москва");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id=name] [type=text]").setValue("Наталья Козина");
         $("[data-test-id=phone] [type=tel]").setValue("#$%#$%");
         $("[data-test-id=agreement]").click();
@@ -166,8 +176,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfPhoneIsWrong() {
         $("[data-test-id=city] [placeholder='Город']").setValue("Москва");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id=name] [type=text]").setValue("Наталья Козина");
         $("[data-test-id=phone] [type=tel]").setValue("79883339918");
         $("[data-test-id=agreement]").click();
@@ -180,8 +191,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfPhoneWrong() {
         $("[data-test-id=city] [placeholder='Город']").setValue("Москва");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id=name] [type=text]").setValue("Наталья Козина");
         $("[data-test-id=phone] [type=tel]").setValue("+7988339918");
         $("[data-test-id=agreement]").click();
@@ -194,8 +206,9 @@ public class CardDeliveryNegativeTest {
     @Test
     public void shouldReturnErrorMessageIfDoNotTick() {
         $("[data-test-id=city] [placeholder='Город']").setValue("Москва");
+        String planningDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
+        $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(planningDate);
         $("[data-test-id=name] [type=text]").setValue("Наталья Козина");
         $("[data-test-id=phone] [type=tel]").setValue("+79883339918");
         $("[role=button] .button__content").click();
