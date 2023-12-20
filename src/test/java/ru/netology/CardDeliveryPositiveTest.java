@@ -14,6 +14,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class CardDeliveryPositiveTest {
+
+    public String generateDate(int addDays, String pattern) {
+        return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
+    }
     @BeforeEach
     void setUp() {
         open("http://localhost:9999");
@@ -22,11 +26,6 @@ public class CardDeliveryPositiveTest {
     // 1. Отправка заявки с верно заполненными полями;
     @Test
     public void shouldReturnSuccessIfFieldsAreFilledInCorrectly() {
-
-        LocalDate deliveryDateCard = LocalDate.now().plusDays(3);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String dateText = deliveryDateCard.format(formatter);
-
         $("[data-test-id=city] [placeholder='Город']").setValue("Москва");
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
@@ -42,10 +41,6 @@ public class CardDeliveryPositiveTest {
     // 2. Отправка заявки с указанием фамилии через дефис;
     @Test
     public void shouldReturnSuccessfullyIfSurnameWithHyphen() {
-        LocalDate deliveryDateCard = LocalDate.now().plusDays(3);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String dateText = deliveryDateCard.format(formatter);
-
         $("[data-test-id=city] [placeholder='Город']").setValue("Москва");
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
@@ -61,10 +56,6 @@ public class CardDeliveryPositiveTest {
     // 3. Отправка заявки с указанием города через дефис;
     @Test
     public void shouldReturnSuccessfullyIfCityWithHyphen() {
-        LocalDate deliveryDateCard = LocalDate.now().plusDays(3);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String dateText = deliveryDateCard.format(formatter);
-
         $("[data-test-id=city] [placeholder='Город']").setValue("Ростов-на-Дону");
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id=date] [class='input__box'] [placeholder='Дата встречи']").setValue(dateText);
